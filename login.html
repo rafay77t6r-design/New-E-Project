@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>login form</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+        <link rel="icon" type="image/x-icon" href="images/ChatGPT_Image_Nov_7__2025__08_18_48_AM-removebg-preview (1).png">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Inline styles for login form (labels hidden visually) */
+        :root {
+            --accent: #ff84a4;
+            --card-bg: #ffffff;
+            --muted: #7b7b7b;
+        }
+
+        body {
+            /* background image with a soft overlay so text stays readable */
+            background: linear-gradient(rgba(255,250,251,0.62), rgba(255,246,248,0.62)), url('images/download.jfif') center/cover no-repeat fixed;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        .login-card {
+            max-width: 480px;
+            margin: 48px auto;
+            /* make the card background transparent as requested */
+            background: transparent;
+            padding: 32px;
+            border-radius: 14px;
+            /* keep a subtle border and shadow so the card remains visible */
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 10px 30px rgba(18, 18, 18, 0.08);
+            transition: transform 220ms ease, box-shadow 220ms ease;
+            min-height: 420px; /* increased height as requested */
+            backdrop-filter: none;
+        }
+
+        .login-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(18, 18, 18, 0.08);
+        }
+
+        .login-card h2 {
+            margin: 0 0 14px 0;
+            font-size: 22px;
+            color: #222;
+        }
+
+        .visually-hidden {
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+            white-space: nowrap;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            font-size: 15px;
+            background: #fbfbfb;
+            transition: box-shadow 180ms ease, border-color 180ms ease, transform 120ms ease;
+        }
+
+        .login-input:hover {
+            border-color: rgba(255, 132, 164, 0.35);
+            transform: translateY(-1px);
+        }
+
+        .login-input:focus {
+            outline: none;
+            box-shadow: 0 6px 18px rgba(255, 132, 164, 0.12);
+            border-color: var(--accent);
+            background: #fff;
+        }
+
+        .error {
+            color: #c53030;
+            font-size: 13px;
+            margin: 6px 0 10px 0;
+            display: none;
+        }
+
+        .success {
+            color: green;
+            font-size: 14px;
+            margin-top: 8px;
+            display: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            cursor: pointer;
+            box-shadow: 0 8px 18px rgba(255, 132, 164, 0.12);
+            transition: transform 160ms ease, box-shadow 160ms ease, opacity 120ms ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 28px #ff84a4;
+        }
+
+        .login-btn:active {
+            transform: translateY(-1px) scale(.997);
+        }
+
+        .login-btn:disabled {
+            /* Do not change opacity when disabled; use subtle grayscale and keep layout stable */
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            filter: grayscale(30%);
+            pointer-events: none; /* prevent clicks while keeping visual presence */
+        }
+
+        /* button row and clear button */
+        .btn-row { display:flex; gap:12px; margin-top:8px; }
+        .login-btn { flex:1; }
+        .clear-btn { flex:1; padding:12px; background:#fff; color:var(--accent); border:1px solid rgba(255,132,164,0.28); border-radius:12px; font-size:15px; cursor:pointer; transition: transform 160ms ease, box-shadow 160ms ease, background 120ms ease; }
+        .clear-btn:hover{ transform: translateY(-3px); box-shadow: 0 10px 18px rgba(255,132,164,0.06); background:#fffafc; }
+
+        .login-small {
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        /* subtle accent underline for focusable elements when keyboard-navigated */
+        .login-input:focus-visible {
+            outline: 3px solid rgba(255, 132, 164, 0.12);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="off">
+        <marquee behavior="" direction=" ">
+            <h3 class="heading-three">We Believe Cakes Made with Love are Loved by All.</h3>
+        </marquee>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/ChatGPT_Image_Nov_7__2025__08_18_48_AM-removebg-preview (1).png" alt="Logo">
+            </div>
+
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="Gallery.html">Gallery</a>
+                <a href="review.html">Reviews</a>
+
+                <div class="login">
+                    <a href="login.html">Login/Register</a>
+                </div>
+                <div class="social-media">
+                    <a href="#"><i class="fa fa-search"></i></a>
+                    <a href="#"><i class="fa fa-heart"></i></a>
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <!-- Login form (placeholder-only inputs; labels hidden visually) -->
+    <section>
+        <div class="login-card">
+            <h2>Login</h2>
+
+            <form id="loginForm" novalidate>
+                <label for="email" class="visually-hidden">Email</label>
+                <input id="email" name="email" type="email" class="login-input" placeholder="Email address" required
+                    aria-required="true" />
+                <div id="email-error" class="error">Please enter a valid email address.</div>
+
+                <label for="password" class="visually-hidden">Password</label>
+                <input id="password" name="password" type="password" class="login-input"
+                    placeholder="Password (min 6 chars)" required aria-required="true" />
+                <div id="password-error" class="error">Password must be at least 6 characters.</div>
+
+                <div class="btn-row">
+                    <button id="login-submit" class="login-btn" type="submit">Login</button>
+                    <button id="clear-btn" type="button" class="clear-btn">Clear</button>
+                </div>
+                <div id="form-success" class="success">Login successful</div>
+            </form>
+        </div>
+    </section>
+
+    <!-- jQuery for validation -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // jQuery-based validation for the login form
+        $(function () {
+            const $form = $('#loginForm');
+            const $email = $('#email');
+            const $password = $('#password');
+            const $emailError = $('#email-error');
+            const $passwordError = $('#password-error');
+            const $submit = $('#login-submit');
+            const $success = $('#form-success');
+
+            function isValidEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+
+            function validateEmail() {
+                const val = $email.val().trim();
+                if (!val) {
+                    $emailError.text('Email is required').show();
+                    return false;
+                }
+                if (!isValidEmail(val)) {
+                    $emailError.text('Please enter a valid email address').show();
+                    return false;
+                }
+                $emailError.hide();
+                return true;
+            }
+
+            function validatePassword() {
+                const val = $password.val();
+                if (!val) {
+                    $passwordError.text('Password is required').show();
+                    return false;
+                }
+                if (val.length < 6) {
+                    $passwordError.text('Password must be at least 6 characters').show();
+                    return false;
+                }
+                $passwordError.hide();
+                return true;
+            }
+
+            function toggleSubmit() {
+                if (validateEmail() && validatePassword()) {
+                    $submit.prop('disabled', false);
+                } else {
+                    $submit.prop('disabled', true);
+                }
+            }
+
+            $email.on('input blur', function () { validateEmail(); toggleSubmit(); });
+            $password.on('input blur', function () { validatePassword(); toggleSubmit(); });
+
+            // initial state
+            $submit.prop('disabled', true);
+
+            // Clear button: reset the form, hide errors/messages and disable submit
+            $('#clear-btn').on('click', function () {
+                $form[0].reset();
+                $emailError.hide();
+                $passwordError.hide();
+                $('#auth-error').remove();
+                $success.hide();
+                $submit.prop('disabled', true);
+                $email.focus();
+            });
+
+            $form.on('submit', function (e) {
+                e.preventDefault();
+                $success.hide();
+                const emailOk = validateEmail();
+                const passOk = validatePassword();
+                if (!emailOk || !passOk) { $submit.prop('disabled', true); return; }
+                $success.text('Login successful — demo (no server)').show();
+            });
+        });
+    </script>
+     <script>
+
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    </script>
+
+        <script>
+  window.addEventListener("scroll", function () {
+    let navbar = document.querySelector("nav");
+    if (window.scrollY > 50) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  });
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+<!-- Footer -->
+<footer class="site-footer" role="contentinfo">
+    <div class="footer-container">
+        <div class="footer-col footer-brand">
+            <div class="footer-logo">
+                <img src="images/ChatGPT_Image_Nov_7__2025__08_18_48_AM-removebg-preview (1).png" alt="Dynacakes logo">
+            </div>
+            <p class="footer-about">Do you want freshly baked, top-quality cakes in Karachi? Then visit Dynacakes! We have all the types and formats of cakes, including customizable cakes, cupcakes, cakesicles and brownies. Order online and get it done just as you want.</p>
+        </div>
+
+        <div class="footer-col footer-links">
+            <div class="footer-title">NAVIGATION MENU</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="gallery.html">All Cakes Variety</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col footer-links">
+            <div class="footer-title">TOP CATEGORIES</div>
+            <ul>
+                <li>Baby Shower Theme Cakes</li>
+                <li>Cartoon Character Cakes</li>
+                <li>Wedding Cakes</li>
+            </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+            <div class="footer-title">CONTACT INFO</div>
+            <p><i class="fa fa-envelope"></i> info@dynacakes.com</p>
+            <p><i class="fa fa-phone"></i> +92 334 3235901</p>
+            <div class="social-icons" style="margin-top:8px;">
+                <a href="#" aria-label="facebook"><i class="fa fa-facebook-f"></i></a>
+                <a href="#" aria-label="instagram"><i class="fa fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>

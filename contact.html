@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Contact</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"rel="stylesheet"/>
+    <link rel="icon" type="image/x-icon" href="images/ChatGPT_Image_Nov_7__2025__08_18_48_AM-removebg-preview (1).png">
+        <link rel="stylesheet" href="contact.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+        <style>
+          /* Contact form styles to match requested layout */
+          .contact-wrap{padding:36px 0}
+          .contact-card{background:#fff;padding:28px;border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+          .form-title small{display:block;color:#9aa0a6;font-size:13px;margin-bottom:6px}
+          .form-title h2{margin:0 0 18px;font-size:22px}
+          .form-control.error{border-color:#c53030}
+          .error-text{color:#c53030;font-size:13px;margin-top:6px;display:none}
+          .btn-send{background:#8b2f37;border-color:#8b2f37;color:#fff;font-weight:700;padding:12px 18px;border-radius:2px;width:100%}
+          .btn-send:hover{background:#7a2730;border-color:#7a2730}
+          .sitemap-card{padding:20px;border-radius:6px; margin-right:40px;}
+          .sitemap-list li{margin:10px 0}
+          .sitemap-list a{color:#333;text-decoration:none;transition:color .15s, transform .12s}
+          .sitemap-list a:hover{color:var(--accent,#8b2f37);transform:translateX(6px)}
+          @media(max-width:767px){ .sitemap-card{margin-top:18px} }
+        </style>
+          <style>
+    .logo img {
+      width: 240px;
+      height: 150px;
+      object-fit: contain;
+    }
+  </style>
+    </head>
+
+    <body>
+          <div class="off">
+    <marquee behavior="" direction=" ">
+      <h3 class="heading-three">We Believe Cakes Made with Love are Loved by All.</h3>
+    </marquee>
+  </div>
+    
+
+   <header>
+    <nav>
+      <div class="logo">
+        <img src="images/ChatGPT_Image_Nov_7__2025__08_18_48_AM-removebg-preview (1).png" alt="Logo">
+      </div>
+
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="Gallery.html">Gallery</a>
+         <a href="review.html">Reviews</a>
+
+        <div class="login">
+          <a href="login.html">Login/Register</a>
+        </div>
+        <div class="social-media">
+          <a href="#"><i class="fa fa-search"></i></a>
+          <a href="#"><i class="fa fa-heart"></i></a>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <!-- Contact form + sitemap simplified to match screenshot -->
+  <section class="contact-wrap">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-7">
+                  <div class="contact-card">
+                    <div class="form-title">
+                      <small>INFORMATION ABOUT US</small>
+                      <h2>CONTACT US FOR ANY QUESTIONS</h2>
+                    </div>
+
+                    <form id="contactForm" novalidate>
+                      <div class="mb-3">
+                        <label for="cname">Name</label>
+                        <input id="cname" name="name" class="form-control" placeholder="Enter Your Name" required />
+                        <div id="name-error" class="error-text">Please enter your name.</div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="cemail">Email</label>
+                        <input id="cemail" name="email" type="email" class="form-control" placeholder="Enter Your Email" required />
+                        <div id="email-error" class="error-text">Please enter a valid email.</div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="cmessage">Message</label>
+                        <textarea id="cmessage" name="message" class="form-control" rows="6" placeholder="Enter Your Message" required></textarea>
+                        <div id="message-error" class="error-text">Please enter a message (min 10 characters).</div>
+                      </div>
+
+                      <button id="contact-submit" type="submit" class="btn btn-send">SEND</button>
+                      <div id="contact-success" style="color:green;margin-top:12px;display:none;">Message sent — we will contact you soon.</div>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="col-lg-5">
+                  <div class="sitemap-card">
+                    <h4>Site map</h4>
+                    <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.615054799353!2d67.01454407443022!3d24.876993744597616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f39fdef5771%3A0x834628e09173031d!2sDynacakes!5e0!3m2!1sen!2s!4v1762591767368!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    (function($){
+      function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+      $(function(){
+        const $form = $('#contactForm');
+        const $name = $('#cname');
+        const $email = $('#cemail');
+        const $message = $('#cmessage');
+        const $success = $('#contact-success');
+
+        function resetErrors(){
+          $('.error-text').hide();
+          $('.form-control').removeClass('error');
+          $success.hide();
+        }
+
+        $form.on('submit', function(e){
+          e.preventDefault();
+          resetErrors();
+
+          const valName = ($name.val()||'').trim();
+          const valEmail = ($email.val()||'').trim();
+          const valMsg = ($message.val()||'').trim();
+
+          let ok = true;
+          if(!valName){ $('#name-error').show(); $name.addClass('error'); ok=false; }
+          if(!isValidEmail(valEmail)){ $('#email-error').show(); $email.addClass('error'); ok=false; }
+          if(!valMsg || valMsg.length < 10){ $('#message-error').show(); $message.addClass('error'); ok=false; }
+
+          if(!ok){
+            // focus first invalid field
+            if(!valName) $name.focus();
+            else if(!isValidEmail(valEmail)) $email.focus();
+            else $message.focus();
+            return;
+          }
+
+          // show success in dedicated element and reset form after short delay
+          $success.show();
+          $('#contact-submit').prop('disabled', true).text('Sending...');
+          setTimeout(function(){
+            $form[0].reset();
+            resetErrors();
+            $('#contact-submit').prop('disabled', false).text('SEND');
+          }, 1200);
+        });
+      });
+    })(jQuery);
+  </script>
+
+   <script>
+
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    </script>
+
+
+    <script>
+  window.addEventListener("scroll", function () {
+    let navbar = document.querySelector("nav");
+    if (window.scrollY > 50) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  });
+</script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <img src="images/ChatGPT_Image_Nov_7__2025__08_18_48_AM-removebg-preview (1).png" alt="Dynacakes logo">
+        </div>
+        <p class="footer-about">Do you want freshly baked, top-quality cakes in Karachi? Then visit Dynacakes! We have all the types and formats of cakes, including customizable cakes, cupcakes, cakesicles and brownies. Order online and get it done just as you want.</p>
+      </div>
+
+      <div class="footer-col footer-links">
+        <div class="footer-title">NAVIGATION MENU</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="gallery.html">All Cakes Variety</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-links">
+        <div class="footer-title">TOP CATEGORIES</div>
+        <ul>
+          <li>Baby Shower Theme Cakes</li>
+          <li>Cartoon Character Cakes</li>
+          <li>Wedding Cakes</li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <div class="footer-title">CONTACT INFO</div>
+        <p><i class="fa fa-envelope"></i> info@DCAKESHOP.com</p>
+        <p><i class="fa fa-phone"></i> +92 334 3235901</p>
+        <div class="social-icons" style="margin-top:8px;">
+          <a href="#" aria-label="facebook"><i class="fa fa-facebook-f"></i></a>
+          <a href="#" aria-label="instagram"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Purchase Form</title>
+  <style>
+    /* keep minimal overrides local to this page; main styles in style.css */
+    body { font-family: Arial, sans-serif; background: #fffafc; }
+    h2 { text-align: left; font-size: 22px; color: #7a2f3a; margin: 0 0 8px 0; }
+    .note-center { text-align: center; color: #7b7b7b; font-size: 13px; margin-bottom: 8px; }
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/ChatGPT_Image_Nov_7__2025__08_18_48_AM-removebg-preview (1).png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+</head>
+<body>
+  <main class="purchase-page">
+    <div class="purchase-card">
+      <aside class="purchase-preview" id="product-preview">
+        <img id="product-image" src="" alt="Product" style="display:none;" />
+        <div class="product-name" id="product-name"></div>
+        <div class="product-code" id="product-code"></div>
+        <div class="product-price" id="product-price"></div>
+        <div class="note-center small-muted">We will confirm availability and delivery time after order.</div>
+      </aside>
+
+      <section class="purchase-form">
+        <h2>Place your order</h2>
+
+        <form onsubmit="handleSubmit(event)">
+          <div>
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required />
+          </div>
+
+          <div>
+            <label for="contact">Contact number</label>
+            <input type="tel" id="contact" name="contact" placeholder="03xx-xxxxxxx" required />
+          </div>
+
+          <div>
+            <label for="item-code">Item code</label>
+            <input type="text" id="item-code" name="item-code" required readonly />
+          </div>
+
+          <div class="form-row">
+            <div class="col">
+              <label for="quantity">Quantity</label>
+              <input type="number" id="quantity" name="quantity" min="1" value="1" required />
+            </div>
+            <div class="col">
+              <label for="delivery-date">Delivery date</label>
+              <input type="date" id="delivery-date" name="delivery-date" required />
+            </div>
+          </div>
+
+          <div>
+            <label for="delivery-address">Delivery address</label>
+            <textarea id="delivery-address" name="delivery-address" placeholder="Enter delivery address" required></textarea>
+          </div>
+
+          <div style="margin-top:8px;display:flex;gap:12px;align-items:center;">
+            <button type="submit" class="submit-order">Submit order</button>
+            <div class="small-muted">You will receive a confirmation SMS.</div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Parse query params and prefill preview + item code + quantity
+    (function prefillFromQuery(){
+      try{
+        const params = new URLSearchParams(window.location.search);
+        const img = params.get('img');
+        const pname = params.get('pname');
+        const code = params.get('code');
+        const qty = params.get('qty') || '1';
+        const price = params.get('price') || '';
+
+        if(img){
+          const imgEl = document.getElementById('product-image');
+          imgEl.src = img;
+          imgEl.style.display = 'inline-block';
+        }
+        if(pname){
+          const nameEl = document.getElementById('product-name');
+          nameEl.textContent = pname;
+        }
+        if(code){
+          const codeInput = document.getElementById('item-code');
+          const codeLabel = document.getElementById('product-code');
+          codeInput.value = code;
+          if(codeLabel) codeLabel.textContent = 'Item Code: ' + code;
+        }
+        if(qty){
+          const qtyInput = document.getElementById('quantity');
+          qtyInput.value = qty;
+        }
+        if(price){
+          const priceEl = document.getElementById('product-price');
+          if(priceEl) priceEl.textContent = 'Price: ' + price;
+        }
+      }catch(e){
+        // ignore
+      }
+    })();
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert("Order submitted successfully!") ;
+      window.close(); 
+    }
+  </script>
+
+          <script>
+  window.addEventListener("scroll", function () {
+    let navbar = document.querySelector("nav");
+    if (window.scrollY > 50) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  });
+</script>
+<!-- Footer -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-col footer-brand">
+      <div class="footer-logo">
+        <img src="images/ChatGPT_Image_Nov_7__2025__08_18_48_AM-removebg-preview (1).png" alt="Dynacakes logo">
+      </div>
+      <p class="footer-about">Do you want freshly baked, top-quality cakes in Karachi? Then visit Dynacakes! We have all the types and formats of cakes, including customizable cakes, cupcakes, cakesicles and brownies. Order online and get it done just as you want.</p>
+    </div>
+
+    <div class="footer-col footer-links">
+      <div class="footer-title">NAVIGATION MENU</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="gallery.html">All Cakes Variety</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-links">
+      <div class="footer-title">TOP CATEGORIES</div>
+      <ul>
+        <li>Baby Shower Theme Cakes</li>
+        <li>Cartoon Character Cakes</li>
+        <li>Wedding Cakes</li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-contact">
+      <div class="footer-title">CONTACT INFO</div>
+      <p><i class="fa fa-envelope"></i> info@dynacakes.com</p>
+      <p><i class="fa fa-phone"></i> +92 334 3235901</p>
+      <div class="social-icons" style="margin-top:8px;">
+        <a href="#" aria-label="facebook"><i class="fa fa-facebook-f"></i></a>
+        <a href="#" aria-label="instagram"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

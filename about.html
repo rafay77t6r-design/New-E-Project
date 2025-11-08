@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="icon" type="image/x-icon" href="images/ChatGPT_Image_Nov_7__2025__08_18_48_AM-removebg-preview (1).png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+  <style>
+    /* Root */
+section {
+  padding: 60px 20px;
+}
+
+/* Headings */
+.container h1,
+.container h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #ff84a4;
+}
+
+/* About Boxes */
+.about-box {
+  background: #fff;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* CEO Section */
+.ceo {
+  background: #fff1f6;
+  text-align: center;
+  padding: 60px 20px;
+}
+.ceo p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Team Section */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 25px;
+}
+.team-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.team-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+/* Timeline */
+.timeline-box {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #ff84a4;
+  border-radius: 10px;
+}
+.timeline-box span {
+  font-weight: 700;
+  color: #ff84a4;
+  font-size: 18px;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 20px;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Animations */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s forwards;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 0.7s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  </style>
+  
+</head>
+<body>
+
+   <header>
+    <nav>
+      <div class="logo">
+        <img src="images/ChatGPT_Image_Nov_7__2025__08_18_48_AM-removebg-preview (1).png" alt="Logo">
+      </div>
+
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="Gallery.html">Gallery</a>
+         <a href="review.html">Reviews</a>
+
+        <div class="login">
+          <a href="login.html">Login/Register</a>
+        </div>
+        <div class="social-media">
+          <a href="#"><i class="fa fa-search"></i></a>
+          <a href="#"><i class="fa fa-heart"></i></a>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+<section class="about">
+  <div class="container">
+    <h1>About Us</h1>
+
+    <!-- Foundation -->
+    <div class="about-box fade">
+      <h2>Our Foundation</h2>
+      <p>
+        Dcake Shop grew from a humble home kitchen into a boutique cakespace
+        built on creativity, flavor, and a heartfelt love for celebrations.
+      </p>
+    </div>
+
+    <!-- Mission -->
+    <div class="about-box fade">
+      <h2>Our Mission</h2>
+      <p>
+        Our mission is to craft cakes that spark joy. Each slice carries fresh
+        ingredients, thoughtful design, and a quiet promise of excellence.
+      </p>
+    </div>
+
+    <!-- Vision -->
+    <div class="about-box fade">
+      <h2>Our Vision</h2>
+      <p>
+        We see a future where Dcake Shop becomes a household name known for
+        artistry, warmth, and unforgettable celebration experiences.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CEO Message -->
+<section class="ceo">
+  <div class="container fade">
+    <h2>Message from Our CEO</h2>
+    <p>
+      “Every cake carries a celebration inside it. My goal has always been to
+      make those moments sweeter, brighter, and beautifully memorable.”
+    </p>
+    <h4>— Muhammad Bilal, Founder & CEO</h4>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="team">
+  <div class="container">
+    <h2>Meet Our Team</h2>
+
+    <div class="team-grid">
+
+      <div class="team-card fade-up">
+        <img src="images/team1.jpg" alt="">
+        <h3> Muhammad Bilal</h3>
+      </div>
+
+      <div class="team-card fade-up">
+        <img src="images/team2.jpg" alt="">
+        <h3>Abdul Rafay</h3>
+        
+      </div>
+
+      <div class="team-card fade-up">
+        <img src="images/team3.jpg" alt="">
+        <h3>Hamad</h3>
+        <p>Customer Experience Lead</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Achievements Timeline -->
+<section class="timeline">
+  <div class="container">
+    <h2>Our Journey</h2>
+
+    <div class="timeline-box fade">
+      <span>2018</span>
+      <p>Dcake Shop was founded with a single oven and a bold dream.</p>
+    </div>
+
+    <div class="timeline-box fade">
+      <span>2020</span>
+      <p>Crossed 5,000 custom cakes crafted with love.</p>
+    </div>
+
+    <div class="timeline-box fade">
+      <span>2022</span>
+      <p>Opened our flagship design studio.</p>
+    </div>
+
+    <div class="timeline-box fade">
+      <span>2024</span>
+      <p>Recognized as one of the top boutique cake creators.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Photo Gallery -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-col footer-brand">
+      <div class="footer-logo">
+        <img src="images/ChatGPT_Image_Nov_7__2025__08_18_48_AM-removebg-preview (1).png" alt="Dynacakes logo">
+      </div>
+      <p class="footer-about">Do you want freshly baked, top-quality cakes in Karachi? Then visit Dynacakes! We have all the types and formats of cakes, including customizable cakes, cupcakes, cakesicles and brownies. Order online and get it done just as you want.</p>
+    </div>
+
+    <div class="footer-col footer-links">
+      <div class="footer-title">NAVIGATION MENU</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="gallery.html">All Cakes Variety</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-links">
+      <div class="footer-title">TOP CATEGORIES</div>
+      <ul>
+        <li>Baby Shower Theme Cakes</li>
+        <li>Cartoon Character Cakes</li>
+        <li>Wedding Cakes</li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-contact">
+      <div class="footer-title">CONTACT INFO</div>
+      <p><i class="fa fa-envelope"></i> info@DCAKESHOP.com</p>
+      <p><i class="fa fa-phone"></i> +92 099778577</p>
+      <div class="social-icons" style="margin-top:8px;">
+        <a href="#" aria-label="facebook"><i class="fa fa-facebook-f"></i></a>
+        <a href="#" aria-label="instagram"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script>
+  window.addEventListener("scroll", function () {
+    let navbar = document.querySelector("nav");
+    if (window.scrollY > 50) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  });
+</script>
+
+
+
+
+</body>
+</html>
+
+
